@@ -1,0 +1,27 @@
+{
+  "name": "tejaswini-portfolio",
+  "install": "npm ci",
+  "start": "true",
+  "terminals": [
+    {
+      "name": "portfolio",
+      "command": "npm run start",
+      "description": "Tejaswini Uppu portfolio on 0.0.0.0:3000 (IDE Preview primary)"
+    },
+    {
+      "name": "portfolio-43127",
+      "command": "npm run preview:ports",
+      "description": "Proxy 0.0.0.0:43127 -> 3000 for existing Preview tabs"
+    }
+  ],
+  "ports": [
+    {
+      "name": "web",
+      "port": 3000
+    },
+    {
+      "name": "portfolio-alt",
+      "port": 43127
+    }
+  ]
+}
