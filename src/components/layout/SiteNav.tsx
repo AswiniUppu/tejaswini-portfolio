@@ -33,6 +33,7 @@ export function SiteNav() {
   }, [open]);
 
   return (
+    <>
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all ${
         scrolled || open ?
@@ -88,36 +89,37 @@ export function SiteNav() {
         </button>
       </div>
 
-      {open ? (
-        <div
-          id={menuId}
-          className="fixed inset-0 top-[65px] z-40 bg-white lg:hidden"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Mobile navigation"
-        >
-          <nav className="flex h-full flex-col justify-center gap-2 px-8">
-            {navMobile.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                aria-current={pathname === item.href ? "page" : undefined}
-                className={`focus-ring border-b border-[var(--border)] py-4 text-2xl font-semibold tracking-tight ${pathname === item.href ? "text-[var(--ink)]" : "text-[var(--ink-soft)]"}`}
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
+    </header>
+    {open ? (
+      <div
+        id={menuId}
+        className="fixed inset-x-0 bottom-0 top-[69px] z-[60] overflow-y-auto overscroll-contain bg-white lg:hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation"
+      >
+        <nav className="flex min-h-full flex-col justify-center gap-1 px-6 py-5 sm:px-8">
+          {navMobile.map((item) => (
             <Link
-              href="/contact"
-              className="cta-primary focus-ring mt-6"
+              key={item.label}
+              href={item.href}
+              aria-current={pathname === item.href ? "page" : undefined}
+              className={`focus-ring border-b border-[var(--border)] py-3 text-xl font-semibold tracking-tight sm:text-2xl ${pathname === item.href ? "text-[var(--ink)]" : "text-[var(--ink-soft)]"}`}
               onClick={() => setOpen(false)}
             >
-              Contact
+              {item.label}
             </Link>
-          </nav>
-        </div>
-      ) : null}
-    </header>
+          ))}
+          <Link
+            href="/contact"
+            className="cta-primary focus-ring mt-4"
+            onClick={() => setOpen(false)}
+          >
+            Contact
+          </Link>
+        </nav>
+      </div>
+    ) : null}
+    </>
   );
 }

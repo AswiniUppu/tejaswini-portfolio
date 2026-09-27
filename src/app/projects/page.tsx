@@ -47,14 +47,14 @@ function ProjectArtwork({ projectId }: { projectId: string }) {
           <span className="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.2em] text-white/65">Privacy by design</span>
           <ShieldCheck size={21} strokeWidth={1.5} aria-hidden />
         </div>
-        <div className="flex items-center justify-center gap-3 py-8 sm:gap-5">
+        <div className="flex flex-col items-center justify-center gap-3 py-6 sm:flex-row sm:gap-5 sm:py-8">
           <div className="text-center">
             <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-white/35 text-xs">A</span>
             <span className="mt-2 block text-xs text-white/65">Vehicle owner</span>
           </div>
-          <ArrowRight className="shrink-0 text-white/55" aria-hidden />
+          <ArrowRight className="-rotate-90 shrink-0 text-white/55 sm:rotate-0" aria-hidden />
           <div className="rounded-full border border-white/40 px-4 py-3 text-center font-[family-name:var(--font-mono)] text-xs tracking-widest sm:px-5">•••••  ••••</div>
-          <ArrowRight className="shrink-0 text-white/55" aria-hidden />
+          <ArrowRight className="-rotate-90 shrink-0 text-white/55 sm:rotate-0" aria-hidden />
           <div className="text-center">
             <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-white/35 text-xs">B</span>
             <span className="mt-2 block text-xs text-white/65">Connected user</span>
