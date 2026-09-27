@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { navDesktop, navMobile } from "@/data/portfolio";
 
 export function SiteNav() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const menuId = useId();
@@ -55,7 +57,8 @@ export function SiteNav() {
             <Link
               key={item.id}
               href={item.href}
-              className="focus-ring rounded-full px-3 py-2 text-sm font-medium text-[var(--ink-soft)] transition hover:text-[var(--ink)]"
+              aria-current={pathname === item.href ? "page" : undefined}
+              className={`focus-ring rounded-full px-3 py-2 text-sm font-medium transition hover:text-[var(--ink)] ${pathname === item.href ? "bg-[var(--bg-soft)] text-[var(--ink)]" : "text-[var(--ink-soft)]"}`}
             >
               {item.label.charAt(0) + item.label.slice(1).toLowerCase()}
             </Link>
@@ -64,7 +67,7 @@ export function SiteNav() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Link
-            href="/#contact"
+            href="/contact"
             className="cta-primary focus-ring !min-h-10 !px-5 !text-sm"
             data-cursor="interactive"
           >
@@ -98,14 +101,15 @@ export function SiteNav() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="focus-ring border-b border-[var(--border)] py-4 text-2xl font-semibold tracking-tight"
+                aria-current={pathname === item.href ? "page" : undefined}
+                className={`focus-ring border-b border-[var(--border)] py-4 text-2xl font-semibold tracking-tight ${pathname === item.href ? "text-[var(--ink)]" : "text-[var(--ink-soft)]"}`}
                 onClick={() => setOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
             <Link
-              href="/#contact"
+              href="/contact"
               className="cta-primary focus-ring mt-6"
               onClick={() => setOpen(false)}
             >

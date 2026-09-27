@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { profile } from "@/data/portfolio";
@@ -62,8 +63,8 @@ export function HeroCore() {
             {profile.description}
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
-              href="#lab"
+            <Link
+              href="/projects"
               className="cta-primary focus-ring"
               data-cursor="interactive"
             >
@@ -71,14 +72,14 @@ export function HeroCore() {
               <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white text-[var(--ink)]">
                 <ArrowUpRight size={14} aria-hidden />
               </span>
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              href="/contact"
               className="cta-secondary focus-ring"
               data-cursor="interactive"
             >
               Let&apos;s talk
-            </a>
+            </Link>
           </div>
           <div className="mt-10 flex flex-wrap gap-2">
             {["React", "TypeScript", "Node.js", "AI", "PostgreSQL"].map((t) => (

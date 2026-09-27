@@ -18,19 +18,20 @@ export const profile = {
 } as const;
 
 export const navDesktop = [
-  { id: "01", label: "HOME", href: "/#core" },
-  { id: "02", label: "ENGINE", href: "/#engine" },
-  { id: "03", label: "JOURNEY", href: "/#journey" },
-  { id: "04", label: "LAB", href: "/#lab" },
-  { id: "05", label: "IMPACT", href: "/#impact" },
-  { id: "06", label: "CONTACT", href: "/#contact" },
+  { id: "01", label: "HOME", href: "/" },
+  { id: "02", label: "ABOUT", href: "/about" },
+  { id: "03", label: "EXPERIENCE", href: "/experience" },
+  { id: "04", label: "PROJECTS", href: "/projects" },
+  { id: "05", label: "AWARDS", href: "/achievements" },
+  { id: "06", label: "CONTACT", href: "/contact" },
 ] as const;
 
 export const navMobile = [
-  { label: "HOME", href: "/#core" },
+  { label: "HOME", href: "/" },
   { label: "ABOUT", href: "/about" },
   { label: "EXPERIENCE", href: "/experience" },
   { label: "PROJECTS", href: "/projects" },
+  { label: "AWARDS", href: "/achievements" },
   { label: "CONTACT", href: "/contact" },
 ] as const;
 
@@ -98,7 +99,7 @@ export const timeline = [
     id: "education",
     period: "2018–2024",
     title: "B.Tech., Computer Science Engineering",
-    org: "RGUKT",
+    org: "Rajiv Gandhi University of Knowledge Technologies (RGUKT)",
     detail: "CGPA 9.0/10",
   },
   {
@@ -127,6 +128,28 @@ export const visys = {
   ],
 } as const;
 
+export const experienceHighlights = [
+  "Delivered 6+ production web applications across React and TypeScript frontends and Node.js/Express backends.",
+  "Built and maintained the TypeScript component layer for AI4Bazaar, rendering generated site structures and AI-produced content.",
+  "Created a reusable React and Tailwind UI library that standardized patterns across production applications.",
+  "Integrated OpenAI APIs for dynamic content and layout generation in a client-facing website generator.",
+  "Built a Jenkins CI/CD pipeline that cut deployment time by about 90%, from hours to under 10 minutes.",
+  "Designed JWT-secured REST APIs and integrated Razorpay payments and Shiprocket logistics.",
+  "Led client requirement sessions and product demos across 6+ projects.",
+] as const;
+
+export const education = {
+  degree: "B.Tech., Computer Science Engineering",
+  institution: "Rajiv Gandhi University of Knowledge Technologies (RGUKT)",
+  period: "July 2018 - April 2024",
+  result: "CGPA 9.0 / 10",
+} as const;
+
+export const spokenLanguages = [
+  { name: "English", level: "C1" },
+  { name: "Telugu", level: "Native" },
+] as const;
+
 export const projects = [
   {
     id: "ai4bazaar",
@@ -151,6 +174,7 @@ export const projects = [
       },
     ],
     stack: ["React", "TypeScript", "Node.js", "OpenAI APIs", "Jenkins CI/CD"],
+    links: [{ label: "Visit AI4Bazaar", href: "https://ai4bazaar.com/" }],
   },
   {
     id: "rdvp",
@@ -165,6 +189,7 @@ export const projects = [
       "Zero privacy incidents",
     ],
     stack: ["PostgreSQL", "Express", "React", "Node.js"],
+    links: [{ label: "Visit RDVP", href: "https://rdvp.io/" }],
   },
   {
     id: "learning-platforms",
@@ -179,6 +204,10 @@ export const projects = [
       "Interactive lessons and assessments",
     ],
     stack: ["PostgreSQL", "Express", "React", "Node.js"],
+    links: [
+      { label: "Cloud4CoolKids", href: "https://cloud4coolkids.com/" },
+      { label: "AI4Mahila", href: "https://ai4mahila.com/" },
+    ],
   },
 ] as const;
 
@@ -209,11 +238,11 @@ export const awards = [
 ] as const;
 
 export const about = {
-  heading: "BEYOND THE CODE",
+  heading: "Building reliable software for real-world needs",
   paragraphs: [
-    "Full-stack engineer focused on React and TypeScript systems that ship to production.",
-    "Builds AI-powered interfaces, reusable UI layers, and client-facing product experiences.",
-    "Grows through shipping production applications and collaborating directly with clients.",
+    "I am a full-stack engineer in Hyderabad, India, focused on building production React and TypeScript interfaces backed by Node.js services.",
+    "My work spans AI-powered website generation, reusable component systems, secure APIs, e-learning products, and digital vehicle experiences.",
+    "I enjoy working close to the product and its users: understanding client needs, turning them into dependable software, and helping the work ship.",
   ],
 } as const;
 
